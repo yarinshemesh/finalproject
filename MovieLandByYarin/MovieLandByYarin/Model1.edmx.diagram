@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a7647c0880f649748a0e560d2834e0e4" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="DBModel.Costumers" Width="1.5" PointX="6.375" PointY="10.25" />
+        <EntityTypeShape EntityType="DBModel.Food_Deals" Width="1.5" PointX="14.875" PointY="6.875" />
+        <EntityTypeShape EntityType="DBModel.Movie_Deal" Width="1.5" PointX="5.375" PointY="5.625" />
+        <EntityTypeShape EntityType="DBModel.Movies" Width="1.5" PointX="5.5" PointY="1.25" />
+        <EntityTypeShape EntityType="DBModel.Outcomes" Width="1.5" PointX="12" PointY="1.75" />
+        <EntityTypeShape EntityType="DBModel.Review" Width="1.5" PointX="11.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DBModel.Shifts" Width="1.5" PointX="8.75" PointY="1.125" />
+        <EntityTypeShape EntityType="DBModel.Suppliers" Width="1.5" PointX="15.5" PointY="2.375" />
+        <EntityTypeShape EntityType="DBModel.Workers" Width="1.5" PointX="8.5" PointY="4.625" />
+        <AssociationConnector Association="DBModel.FK_Food_Deals_Costumers" />
+        <AssociationConnector Association="DBModel.FK_Movie_Deal_Costumers" />
+        <AssociationConnector Association="DBModel.FK_Review_Costumers" />
+        <AssociationConnector Association="DBModel.FK_Food_Deals_Workers" />
+        <AssociationConnector Association="DBModel.FK_Movie_Deal_Movies" />
+        <AssociationConnector Association="DBModel.FK_Movie_Deal_Workers" />
+        <AssociationConnector Association="DBModel.FK_Outcomes_Suppliers" />
+        <AssociationConnector Association="DBModel.FK_Outcomes_Workers" />
+        <AssociationConnector Association="DBModel.FK_Shifts_Workers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
