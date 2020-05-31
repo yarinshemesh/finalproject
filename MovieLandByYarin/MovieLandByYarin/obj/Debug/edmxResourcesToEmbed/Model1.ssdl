@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Costumers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Directors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Director_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Food_Deal_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Food_Deals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Worker" Type="int" Nullable="false" />
+    <Property Name="Costumer" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie_Deal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Worker" Type="int" Nullable="false" />
+    <Property Name="Costumer" Type="int" Nullable="false" />
+    <Property Name="Movie" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie_Deal_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DealID" Type="int" Nullable="false" />
+    <Property Name="Ticket_Type" Type="int" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Director" Type="int" Nullable="false" />
+    <Property Name="Time" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age_Limit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Incomes" Type="nvarchar" MaxLength="50" />
+    <Property Name="Everge_grade" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Outcomes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Worker" Type="int" Nullable="false" />
+    <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Supplier" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Product" Type="nvarchar" MaxLength="50" />
+    <Property Name="Price" Type="int" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Costumer" Type="int" Nullable="false" />
+    <Property Name="Movie_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Star_num" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Worker" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoursNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type_supplies" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="supplies_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="food" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="clean_metrial" Type="nvarchar" MaxLength="50" />
+    <Property Name="uniforms" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ticket_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ticket_Kind" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Worker_types">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="JobType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BirthDay" Type="date" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Worker_Type" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Food_Deal_Details_ToTable">
+    <End Role="Food_Deals" Type="Self.Food_Deals" Multiplicity="1" />
+    <End Role="Food_Deal_Details" Type="Self.Food_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food_Deals">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deal_Details">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Food_Deals_Costumers">
+    <End Role="Costumers" Type="Self.Costumers" Multiplicity="1" />
+    <End Role="Food_Deals" Type="Self.Food_Deals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deals">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Food_Deals_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Food_Deals" Type="Self.Food_Deals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deals">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Costumers">
+    <End Role="Costumers" Type="Self.Costumers" Multiplicity="1" />
+    <End Role="Movie_Deal" Type="Self.Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Movies">
+    <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+    <End Role="Movie_Deal" Type="Self.Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Movie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Movie_Deal" Type="Self.Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movies_ToDirectors">
+    <End Role="Directors" Type="Self.Directors" Multiplicity="1" />
+    <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Director" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outcomes_Suppliers">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="Outcomes" Type="Self.Outcomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outcomes">
+        <PropertyRef Name="Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outcomes_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Outcomes" Type="Self.Outcomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outcomes">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Costumers">
+    <End Role="Costumers" Type="Self.Costumers" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shifts_Workers">
+    <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+    <End Role="Shifts" Type="Self.Shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToMovie_Deal">
+    <End Role="Movie_Deal" Type="Self.Movie_Deal" Multiplicity="1" />
+    <End Role="Movie_Deal_Details" Type="Self.Movie_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie_Deal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal_Details">
+        <PropertyRef Name="DealID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToTicket_Type">
+    <End Role="ticket_type" Type="Self.ticket_type" Multiplicity="1" />
+    <End Role="Movie_Deal_Details" Type="Self.Movie_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ticket_type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal_Details">
+        <PropertyRef Name="Ticket_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_ToWorker_Types">
+    <End Role="Worker_types" Type="Self.Worker_types" Multiplicity="1" />
+    <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker_types">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="Worker_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBModelStoreContainer">
+    <EntitySet Name="Costumers" EntityType="Self.Costumers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Directors" EntityType="Self.Directors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food_Deal_Details" EntityType="Self.Food_Deal_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Food_Deals" EntityType="Self.Food_Deals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie_Deal" EntityType="Self.Movie_Deal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie_Deal_Details" EntityType="Self.Movie_Deal_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Outcomes" EntityType="Self.Outcomes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shifts" EntityType="Self.Shifts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supplies_type" EntityType="Self.supplies_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ticket_type" EntityType="Self.ticket_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Worker_types" EntityType="Self.Worker_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Food_Deal_Details_ToTable" Association="Self.FK_Food_Deal_Details_ToTable">
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+      <End Role="Food_Deal_Details" EntitySet="Food_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Food_Deals_Costumers" Association="Self.FK_Food_Deals_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Food_Deals_Workers" Association="Self.FK_Food_Deals_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Costumers" Association="Self.FK_Movie_Deal_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Movies" Association="Self.FK_Movie_Deal_Movies">
+      <End Role="Movies" EntitySet="Movies" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Workers" Association="Self.FK_Movie_Deal_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movies_ToDirectors" Association="Self.FK_Movies_ToDirectors">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outcomes_Suppliers" Association="Self.FK_Outcomes_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Outcomes" EntitySet="Outcomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outcomes_Workers" Association="Self.FK_Outcomes_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Outcomes" EntitySet="Outcomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Costumers" Association="Self.FK_Review_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shifts_Workers" Association="Self.FK_Shifts_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToMovie_Deal" Association="Self.FK_Table_ToMovie_Deal">
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+      <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToTicket_Type" Association="Self.FK_Table_ToTicket_Type">
+      <End Role="ticket_type" EntitySet="ticket_type" />
+      <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_ToWorker_Types" Association="Self.FK_Workers_ToWorker_Types">
+      <End Role="Worker_types" EntitySet="Worker_types" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

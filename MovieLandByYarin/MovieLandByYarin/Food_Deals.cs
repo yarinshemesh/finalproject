@@ -14,13 +14,20 @@ namespace MovieLandByYarin
     
     public partial class Food_Deals
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Food_Deals()
+        {
+            this.Food_Deal_Details = new HashSet<Food_Deal_Details>();
+        }
+    
         public int Id { get; set; }
         public int Worker { get; set; }
         public int Costumer { get; set; }
-        public string Price { get; set; }
-        public string Product { get; set; }
+        public int Price { get; set; }
     
         public virtual Costumers Costumers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Food_Deal_Details> Food_Deal_Details { get; set; }
         public virtual Workers Workers { get; set; }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\yarinproject\MovieLandByYarin\MovieLandByYarin\obj\Debug\
+E:\finalproject\MovieLandByYarin\MovieLandByYarin\obj\Debug\
 MovieLandByYarin
 none
 false
 DEBUG;TRACE
-F:\yarinproject\MovieLandByYarin\MovieLandByYarin\App.xaml
-11151548125
+E:\finalproject\MovieLandByYarin\MovieLandByYarin\App.xaml
+252046405737
 4-1681823714
-21-1253547484
-18-562031374
-MainWindow.xaml;
+49860337725
+191658038150
+AddCostumer.xaml;AddDirector.xaml;AddFoodDealDetails.xaml;AddMovieDeal.xaml;AddOrderFood.xaml;AddProduct.xaml;AddSuplier.xaml;AddWorkerType.xaml;Add_movie.xaml;Add_movieDetails.xaml;Add_TicketType.xaml;Add_worker.xaml;CustomersHandle.xaml;Directors_list.xaml;FoodDeals.xaml;MainWindow.xaml;MovieDeals.xaml;MoviesHandle.xaml;products_list.xaml;ReviewMovie.xaml;reviews_list.xaml;Supliers.xaml;TicketType.xaml;WorkerHandle.xaml;Workers_type.xaml;
 
-False
+True
 

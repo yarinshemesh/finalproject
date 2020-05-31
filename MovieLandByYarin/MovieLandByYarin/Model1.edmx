@@ -9,45 +9,70 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Directors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Director_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Food_Deal_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Food_Deals">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Worker" Type="int" Nullable="false" />
           <Property Name="Costumer" Type="int" Nullable="false" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Movie_Deal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Worker" Type="int" Nullable="false" />
-          <Property Name="Costemer" Type="int" Nullable="false" />
-          <Property Name="Price" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ticket_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Costumer" Type="int" Nullable="false" />
           <Property Name="Movie" Type="int" Nullable="false" />
-          <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Time_ofMovie" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movie_Deal_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealID" Type="int" Nullable="false" />
+          <Property Name="Ticket_Type" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Movies">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Director" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Director" Type="int" Nullable="false" />
           <Property Name="Time" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Age_Limit" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Incomes" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Everge_grade" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Incomes" Type="nvarchar" MaxLength="50" />
+          <Property Name="Everge_grade" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Outcomes">
           <Key>
@@ -60,6 +85,14 @@
           <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Amount" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -77,8 +110,7 @@
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Worker" Type="int" Nullable="false" />
           <Property Name="Date" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Start_time" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="End_time" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HoursNum" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Suppliers">
           <Key>
@@ -86,21 +118,57 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Generl_incomes" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Type_supplies" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="supplies_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="food" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="clean_metrial" Type="nvarchar" MaxLength="50" />
+          <Property Name="uniforms" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ticket_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ticket_Kind" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Worker_types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="JobType" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Workers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PhoneNum" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BirthDay" Type="date" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Worker_Type" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Food_Deal_Details_ToTable">
+          <End Role="Food_Deals" Type="Self.Food_Deals" Multiplicity="1" />
+          <End Role="Food_Deal_Details" Type="Self.Food_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food_Deals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Food_Deal_Details">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Food_Deals_Costumers">
           <End Role="Costumers" Type="Self.Costumers" Multiplicity="1" />
           <End Role="Food_Deals" Type="Self.Food_Deals" Multiplicity="*" />
@@ -133,7 +201,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Movie_Deal">
-              <PropertyRef Name="Costemer" />
+              <PropertyRef Name="Costumer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -158,6 +226,18 @@
             </Principal>
             <Dependent Role="Movie_Deal">
               <PropertyRef Name="Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movies_ToDirectors">
+          <End Role="Directors" Type="Self.Directors" Multiplicity="1" />
+          <End Role="Movies" Type="Self.Movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Directors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movies">
+              <PropertyRef Name="Director" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -209,16 +289,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Table_ToMovie_Deal">
+          <End Role="Movie_Deal" Type="Self.Movie_Deal" Multiplicity="1" />
+          <End Role="Movie_Deal_Details" Type="Self.Movie_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie_Deal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie_Deal_Details">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTicket_Type">
+          <End Role="ticket_type" Type="Self.ticket_type" Multiplicity="1" />
+          <End Role="Movie_Deal_Details" Type="Self.Movie_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ticket_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie_Deal_Details">
+              <PropertyRef Name="Ticket_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workers_ToWorker_Types">
+          <End Role="Worker_types" Type="Self.Worker_types" Multiplicity="1" />
+          <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker_types">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Worker_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DBModelStoreContainer">
           <EntitySet Name="Costumers" EntityType="Self.Costumers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Directors" EntityType="Self.Directors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Food_Deal_Details" EntityType="Self.Food_Deal_Details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Food_Deals" EntityType="Self.Food_Deals" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movie_Deal" EntityType="Self.Movie_Deal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movie_Deal_Details" EntityType="Self.Movie_Deal_Details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Outcomes" EntityType="Self.Outcomes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shifts" EntityType="Self.Shifts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="supplies_type" EntityType="Self.supplies_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ticket_type" EntityType="Self.ticket_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker_types" EntityType="Self.Worker_types" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Food_Deal_Details_ToTable" Association="Self.FK_Food_Deal_Details_ToTable">
+            <End Role="Food_Deals" EntitySet="Food_Deals" />
+            <End Role="Food_Deal_Details" EntitySet="Food_Deal_Details" />
+          </AssociationSet>
           <AssociationSet Name="FK_Food_Deals_Costumers" Association="Self.FK_Food_Deals_Costumers">
             <End Role="Costumers" EntitySet="Costumers" />
             <End Role="Food_Deals" EntitySet="Food_Deals" />
@@ -239,6 +366,10 @@
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Movie_Deal" EntitySet="Movie_Deal" />
           </AssociationSet>
+          <AssociationSet Name="FK_Movies_ToDirectors" Association="Self.FK_Movies_ToDirectors">
+            <End Role="Directors" EntitySet="Directors" />
+            <End Role="Movies" EntitySet="Movies" />
+          </AssociationSet>
           <AssociationSet Name="FK_Outcomes_Suppliers" Association="Self.FK_Outcomes_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
             <End Role="Outcomes" EntitySet="Outcomes" />
@@ -255,20 +386,39 @@
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Shifts" EntitySet="Shifts" />
           </AssociationSet>
+          <AssociationSet Name="FK_Table_ToMovie_Deal" Association="Self.FK_Table_ToMovie_Deal">
+            <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+            <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTicket_Type" Association="Self.FK_Table_ToTicket_Type">
+            <End Role="ticket_type" EntitySet="ticket_type" />
+            <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workers_ToWorker_Types" Association="Self.FK_Workers_ToWorker_Types">
+            <End Role="Worker_types" EntitySet="Worker_types" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Costumers" EntityType="DBModel.Costumers" />
+          <EntitySet Name="Directors" EntityType="DBModel.Directors" />
+          <EntitySet Name="Food_Deal_Details" EntityType="DBModel.Food_Deal_Details" />
           <EntitySet Name="Food_Deals" EntityType="DBModel.Food_Deals" />
           <EntitySet Name="Movie_Deal" EntityType="DBModel.Movie_Deal" />
+          <EntitySet Name="Movie_Deal_Details" EntityType="DBModel.Movie_Deal_Details" />
           <EntitySet Name="Movies" EntityType="DBModel.Movies" />
           <EntitySet Name="Outcomes" EntityType="DBModel.Outcomes" />
+          <EntitySet Name="Products" EntityType="DBModel.Products" />
           <EntitySet Name="Review" EntityType="DBModel.Review" />
           <EntitySet Name="Shifts" EntityType="DBModel.Shifts" />
           <EntitySet Name="Suppliers" EntityType="DBModel.Suppliers" />
+          <EntitySet Name="supplies_type" EntityType="DBModel.supplies_type" />
+          <EntitySet Name="ticket_type" EntityType="DBModel.ticket_type" />
+          <EntitySet Name="Worker_types" EntityType="DBModel.Worker_types" />
           <EntitySet Name="Workers" EntityType="DBModel.Workers" />
           <AssociationSet Name="FK_Food_Deals_Costumers" Association="DBModel.FK_Food_Deals_Costumers">
             <End Role="Costumers" EntitySet="Costumers" />
@@ -282,6 +432,14 @@
             <End Role="Costumers" EntitySet="Costumers" />
             <End Role="Review" EntitySet="Review" />
           </AssociationSet>
+          <AssociationSet Name="FK_Movies_ToDirectors" Association="DBModel.FK_Movies_ToDirectors">
+            <End Role="Directors" EntitySet="Directors" />
+            <End Role="Movies" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Food_Deal_Details_ToTable" Association="DBModel.FK_Food_Deal_Details_ToTable">
+            <End Role="Food_Deals" EntitySet="Food_Deals" />
+            <End Role="Food_Deal_Details" EntitySet="Food_Deal_Details" />
+          </AssociationSet>
           <AssociationSet Name="FK_Food_Deals_Workers" Association="DBModel.FK_Food_Deals_Workers">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Food_Deals" EntitySet="Food_Deals" />
@@ -293,6 +451,14 @@
           <AssociationSet Name="FK_Movie_Deal_Workers" Association="DBModel.FK_Movie_Deal_Workers">
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToMovie_Deal" Association="DBModel.FK_Table_ToMovie_Deal">
+            <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+            <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Table_ToTicket_Type" Association="DBModel.FK_Table_ToTicket_Type">
+            <End Role="ticket_type" EntitySet="ticket_type" />
+            <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
           </AssociationSet>
           <AssociationSet Name="FK_Outcomes_Suppliers" Association="DBModel.FK_Outcomes_Suppliers">
             <End Role="Suppliers" EntitySet="Suppliers" />
@@ -306,12 +472,16 @@
             <End Role="Workers" EntitySet="Workers" />
             <End Role="Shifts" EntitySet="Shifts" />
           </AssociationSet>
+          <AssociationSet Name="FK_Workers_ToWorker_Types" Association="DBModel.FK_Workers_ToWorker_Types">
+            <End Role="Worker_types" EntitySet="Worker_types" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Costumers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -319,45 +489,77 @@
           <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Costumers" FromRole="Costumers" ToRole="Movie_Deal" />
           <NavigationProperty Name="Review" Relationship="DBModel.FK_Review_Costumers" FromRole="Costumers" ToRole="Review" />
         </EntityType>
+        <EntityType Name="Directors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Director_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Movies" Relationship="DBModel.FK_Movies_ToDirectors" FromRole="Directors" ToRole="Movies" />
+        </EntityType>
+        <EntityType Name="Food_Deal_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Food_Deals" Relationship="DBModel.FK_Food_Deal_Details_ToTable" FromRole="Food_Deal_Details" ToRole="Food_Deals" />
+        </EntityType>
         <EntityType Name="Food_Deals">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Worker" Type="Int32" Nullable="false" />
           <Property Name="Costumer" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Product" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Costumers" Relationship="DBModel.FK_Food_Deals_Costumers" FromRole="Food_Deals" ToRole="Costumers" />
+          <NavigationProperty Name="Food_Deal_Details" Relationship="DBModel.FK_Food_Deal_Details_ToTable" FromRole="Food_Deals" ToRole="Food_Deal_Details" />
           <NavigationProperty Name="Workers" Relationship="DBModel.FK_Food_Deals_Workers" FromRole="Food_Deals" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Movie_Deal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Worker" Type="Int32" Nullable="false" />
-          <Property Name="Costemer" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ticket_Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Costumer" Type="Int32" Nullable="false" />
           <Property Name="Movie" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Time_ofMovie" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Costumers" Relationship="DBModel.FK_Movie_Deal_Costumers" FromRole="Movie_Deal" ToRole="Costumers" />
           <NavigationProperty Name="Movies" Relationship="DBModel.FK_Movie_Deal_Movies" FromRole="Movie_Deal" ToRole="Movies" />
           <NavigationProperty Name="Workers" Relationship="DBModel.FK_Movie_Deal_Workers" FromRole="Movie_Deal" ToRole="Workers" />
+          <NavigationProperty Name="Movie_Deal_Details" Relationship="DBModel.FK_Table_ToMovie_Deal" FromRole="Movie_Deal" ToRole="Movie_Deal_Details" />
+        </EntityType>
+        <EntityType Name="Movie_Deal_Details">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealID" Type="Int32" Nullable="false" />
+          <Property Name="Ticket_Type" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Table_ToMovie_Deal" FromRole="Movie_Deal_Details" ToRole="Movie_Deal" />
+          <NavigationProperty Name="ticket_type1" Relationship="DBModel.FK_Table_ToTicket_Type" FromRole="Movie_Deal_Details" ToRole="ticket_type" />
         </EntityType>
         <EntityType Name="Movies">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Director" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Director" Type="Int32" Nullable="false" />
           <Property Name="Time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Age_Limit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Incomes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Everge_grade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Incomes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Everge_grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Directors" Relationship="DBModel.FK_Movies_ToDirectors" FromRole="Movies" ToRole="Directors" />
           <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Movies" FromRole="Movies" ToRole="Movie_Deal" />
         </EntityType>
         <EntityType Name="Outcomes">
@@ -373,6 +575,14 @@
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Suppliers" Relationship="DBModel.FK_Outcomes_Suppliers" FromRole="Outcomes" ToRole="Suppliers" />
           <NavigationProperty Name="Workers" Relationship="DBModel.FK_Outcomes_Workers" FromRole="Outcomes" ToRole="Workers" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -391,8 +601,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Worker" Type="Int32" Nullable="false" />
           <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Start_time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="End_time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoursNum" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Workers" Relationship="DBModel.FK_Shifts_Workers" FromRole="Shifts" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Suppliers">
@@ -401,25 +610,52 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Generl_incomes" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Type_supplies" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Outcomes" Relationship="DBModel.FK_Outcomes_Suppliers" FromRole="Suppliers" ToRole="Outcomes" />
+        </EntityType>
+        <EntityType Name="supplies_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="food" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="clean_metrial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uniforms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ticket_type">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ticket_Kind" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Movie_Deal_Details" Relationship="DBModel.FK_Table_ToTicket_Type" FromRole="ticket_type" ToRole="Movie_Deal_Details" />
+        </EntityType>
+        <EntityType Name="Worker_types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="JobType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Workers" Relationship="DBModel.FK_Workers_ToWorker_Types" FromRole="Worker_types" ToRole="Workers" />
         </EntityType>
         <EntityType Name="Workers">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PhoneNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Worker_Type" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Food_Deals" Relationship="DBModel.FK_Food_Deals_Workers" FromRole="Workers" ToRole="Food_Deals" />
           <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Workers" FromRole="Workers" ToRole="Movie_Deal" />
           <NavigationProperty Name="Outcomes" Relationship="DBModel.FK_Outcomes_Workers" FromRole="Workers" ToRole="Outcomes" />
           <NavigationProperty Name="Shifts" Relationship="DBModel.FK_Shifts_Workers" FromRole="Workers" ToRole="Shifts" />
+          <NavigationProperty Name="Worker_types" Relationship="DBModel.FK_Workers_ToWorker_Types" FromRole="Workers" ToRole="Worker_types" />
         </EntityType>
         <Association Name="FK_Food_Deals_Costumers">
           <End Type="DBModel.Costumers" Role="Costumers" Multiplicity="1" />
@@ -441,7 +677,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Movie_Deal">
-              <PropertyRef Name="Costemer" />
+              <PropertyRef Name="Costumer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -454,6 +690,30 @@
             </Principal>
             <Dependent Role="Review">
               <PropertyRef Name="Costumer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Movies_ToDirectors">
+          <End Type="DBModel.Directors" Role="Directors" Multiplicity="1" />
+          <End Type="DBModel.Movies" Role="Movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Directors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movies">
+              <PropertyRef Name="Director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Food_Deal_Details_ToTable">
+          <End Type="DBModel.Food_Deals" Role="Food_Deals" Multiplicity="1" />
+          <End Type="DBModel.Food_Deal_Details" Role="Food_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Food_Deals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Food_Deal_Details">
+              <PropertyRef Name="OrderId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -493,6 +753,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Table_ToMovie_Deal">
+          <End Type="DBModel.Movie_Deal" Role="Movie_Deal" Multiplicity="1" />
+          <End Type="DBModel.Movie_Deal_Details" Role="Movie_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie_Deal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie_Deal_Details">
+              <PropertyRef Name="DealID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Table_ToTicket_Type">
+          <End Type="DBModel.ticket_type" Role="ticket_type" Multiplicity="1" />
+          <End Type="DBModel.Movie_Deal_Details" Role="Movie_Deal_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ticket_type">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie_Deal_Details">
+              <PropertyRef Name="Ticket_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Outcomes_Suppliers">
           <End Type="DBModel.Suppliers" Role="Suppliers" Multiplicity="1" />
           <End Type="DBModel.Outcomes" Role="Outcomes" Multiplicity="*" />
@@ -529,12 +813,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_Workers_ToWorker_Types">
+          <End Type="DBModel.Worker_types" Role="Worker_types" Multiplicity="1" />
+          <End Type="DBModel.Workers" Role="Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker_types">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Worker_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+        <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="Database1Entities">
           <EntitySetMapping Name="Costumers">
             <EntityTypeMapping TypeName="DBModel.Costumers">
               <MappingFragment StoreEntitySet="Costumers">
@@ -545,10 +841,29 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Directors">
+            <EntityTypeMapping TypeName="DBModel.Directors">
+              <MappingFragment StoreEntitySet="Directors">
+                <ScalarProperty Name="Director_Name" ColumnName="Director_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Food_Deal_Details">
+            <EntityTypeMapping TypeName="DBModel.Food_Deal_Details">
+              <MappingFragment StoreEntitySet="Food_Deal_Details">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Food_Deals">
             <EntityTypeMapping TypeName="DBModel.Food_Deals">
               <MappingFragment StoreEntitySet="Food_Deals">
-                <ScalarProperty Name="Product" ColumnName="Product" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Costumer" ColumnName="Costumer" />
                 <ScalarProperty Name="Worker" ColumnName="Worker" />
@@ -559,13 +874,22 @@
           <EntitySetMapping Name="Movie_Deal">
             <EntityTypeMapping TypeName="DBModel.Movie_Deal">
               <MappingFragment StoreEntitySet="Movie_Deal">
-                <ScalarProperty Name="Time_ofMovie" ColumnName="Time_ofMovie" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="Movie" ColumnName="Movie" />
-                <ScalarProperty Name="Ticket_Type" ColumnName="Ticket_Type" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Costemer" ColumnName="Costemer" />
+                <ScalarProperty Name="Costumer" ColumnName="Costumer" />
                 <ScalarProperty Name="Worker" ColumnName="Worker" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movie_Deal_Details">
+            <EntityTypeMapping TypeName="DBModel.Movie_Deal_Details">
+              <MappingFragment StoreEntitySet="Movie_Deal_Details">
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Ticket_Type" ColumnName="Ticket_Type" />
+                <ScalarProperty Name="DealID" ColumnName="DealID" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -596,6 +920,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="DBModel.Products">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Review">
             <EntityTypeMapping TypeName="DBModel.Review">
               <MappingFragment StoreEntitySet="Review">
@@ -609,8 +942,7 @@
           <EntitySetMapping Name="Shifts">
             <EntityTypeMapping TypeName="DBModel.Shifts">
               <MappingFragment StoreEntitySet="Shifts">
-                <ScalarProperty Name="End_time" ColumnName="End_time" />
-                <ScalarProperty Name="Start_time" ColumnName="Start_time" />
+                <ScalarProperty Name="HoursNum" ColumnName="HoursNum" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Worker" ColumnName="Worker" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -622,8 +954,34 @@
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
                 <ScalarProperty Name="Type_supplies" ColumnName="Type_supplies" />
-                <ScalarProperty Name="Generl_incomes" ColumnName="Generl_incomes" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supplies_type">
+            <EntityTypeMapping TypeName="DBModel.supplies_type">
+              <MappingFragment StoreEntitySet="supplies_type">
+                <ScalarProperty Name="uniforms" ColumnName="uniforms" />
+                <ScalarProperty Name="clean_metrial" ColumnName="clean_metrial" />
+                <ScalarProperty Name="food" ColumnName="food" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ticket_type">
+            <EntityTypeMapping TypeName="DBModel.ticket_type">
+              <MappingFragment StoreEntitySet="ticket_type">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Ticket_Kind" ColumnName="Ticket_Kind" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Worker_types">
+            <EntityTypeMapping TypeName="DBModel.Worker_types">
+              <MappingFragment StoreEntitySet="Worker_types">
+                <ScalarProperty Name="JobType" ColumnName="JobType" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -631,8 +989,9 @@
           <EntitySetMapping Name="Workers">
             <EntityTypeMapping TypeName="DBModel.Workers">
               <MappingFragment StoreEntitySet="Workers">
+                <ScalarProperty Name="Worker_Type" ColumnName="Worker_Type" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

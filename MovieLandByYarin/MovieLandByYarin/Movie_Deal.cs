@@ -14,17 +14,22 @@ namespace MovieLandByYarin
     
     public partial class Movie_Deal
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Movie_Deal()
+        {
+            this.Movie_Deal_Details = new HashSet<Movie_Deal_Details>();
+        }
+    
         public int Id { get; set; }
         public int Worker { get; set; }
-        public int Costemer { get; set; }
-        public string Price { get; set; }
-        public string Ticket_Type { get; set; }
+        public int Costumer { get; set; }
         public int Movie { get; set; }
-        public string Date { get; set; }
-        public string Time_ofMovie { get; set; }
+        public System.DateTime OrderDate { get; set; }
     
         public virtual Costumers Costumers { get; set; }
         public virtual Movies Movies { get; set; }
         public virtual Workers Workers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movie_Deal_Details> Movie_Deal_Details { get; set; }
     }
 }

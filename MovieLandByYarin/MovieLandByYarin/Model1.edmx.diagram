@@ -5,24 +5,36 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="a7647c0880f649748a0e560d2834e0e4" Name="Diagram1" ZoomLevel="93">
-        <EntityTypeShape EntityType="DBModel.Costumers" Width="1.5" PointX="6.375" PointY="10.25" />
-        <EntityTypeShape EntityType="DBModel.Food_Deals" Width="1.5" PointX="14.875" PointY="6.875" />
-        <EntityTypeShape EntityType="DBModel.Movie_Deal" Width="1.5" PointX="5.375" PointY="5.625" />
-        <EntityTypeShape EntityType="DBModel.Movies" Width="1.5" PointX="5.5" PointY="1.25" />
-        <EntityTypeShape EntityType="DBModel.Outcomes" Width="1.5" PointX="12" PointY="1.75" />
-        <EntityTypeShape EntityType="DBModel.Review" Width="1.5" PointX="11.75" PointY="10.875" />
-        <EntityTypeShape EntityType="DBModel.Shifts" Width="1.5" PointX="8.75" PointY="1.125" />
-        <EntityTypeShape EntityType="DBModel.Suppliers" Width="1.5" PointX="15.5" PointY="2.375" />
-        <EntityTypeShape EntityType="DBModel.Workers" Width="1.5" PointX="8.5" PointY="4.625" />
+        <EntityTypeShape EntityType="DBModel.Costumers" Width="1.5" PointX="3" PointY="10.25" />
+        <EntityTypeShape EntityType="DBModel.Directors" Width="1.5" PointX="3.75" PointY="20.625" />
+        <EntityTypeShape EntityType="DBModel.Food_Deal_Details" Width="1.5" PointX="7.5" PointY="10.25" />
+        <EntityTypeShape EntityType="DBModel.Food_Deals" Width="1.5" PointX="5.25" PointY="6.25" />
+        <EntityTypeShape EntityType="DBModel.Movie_Deal" Width="1.5" PointX="8.25" PointY="6.125" />
+        <EntityTypeShape EntityType="DBModel.Movie_Deal_Details" Width="1.5" PointX="10.5" PointY="6.25" />
+        <EntityTypeShape EntityType="DBModel.Movies" Width="1.5" PointX="6" PointY="20.125" />
+        <EntityTypeShape EntityType="DBModel.Outcomes" Width="1.5" PointX="5.25" PointY="2.125" />
+        <EntityTypeShape EntityType="DBModel.Products" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DBModel.Review" Width="1.5" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="DBModel.Shifts" Width="1.5" PointX="5.25" PointY="16.625" />
+        <EntityTypeShape EntityType="DBModel.Suppliers" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="DBModel.supplies_type" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DBModel.ticket_type" Width="1.5" PointX="8.25" PointY="2.625" />
+        <EntityTypeShape EntityType="DBModel.Worker_types" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="DBModel.Workers" Width="1.5" PointX="3" PointY="5.875" />
         <AssociationConnector Association="DBModel.FK_Food_Deals_Costumers" />
         <AssociationConnector Association="DBModel.FK_Movie_Deal_Costumers" />
         <AssociationConnector Association="DBModel.FK_Review_Costumers" />
+        <AssociationConnector Association="DBModel.FK_Movies_ToDirectors" />
+        <AssociationConnector Association="DBModel.FK_Food_Deal_Details_ToTable" />
         <AssociationConnector Association="DBModel.FK_Food_Deals_Workers" />
         <AssociationConnector Association="DBModel.FK_Movie_Deal_Movies" />
         <AssociationConnector Association="DBModel.FK_Movie_Deal_Workers" />
+        <AssociationConnector Association="DBModel.FK_Table_ToMovie_Deal" />
+        <AssociationConnector Association="DBModel.FK_Table_ToTicket_Type" />
         <AssociationConnector Association="DBModel.FK_Outcomes_Suppliers" />
         <AssociationConnector Association="DBModel.FK_Outcomes_Workers" />
         <AssociationConnector Association="DBModel.FK_Shifts_Workers" />
+        <AssociationConnector Association="DBModel.FK_Workers_ToWorker_Types" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

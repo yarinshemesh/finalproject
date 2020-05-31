@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Costumers" EntityType="DBModel.Costumers" />
+    <EntitySet Name="Directors" EntityType="DBModel.Directors" />
+    <EntitySet Name="Food_Deal_Details" EntityType="DBModel.Food_Deal_Details" />
+    <EntitySet Name="Food_Deals" EntityType="DBModel.Food_Deals" />
+    <EntitySet Name="Movie_Deal" EntityType="DBModel.Movie_Deal" />
+    <EntitySet Name="Movie_Deal_Details" EntityType="DBModel.Movie_Deal_Details" />
+    <EntitySet Name="Movies" EntityType="DBModel.Movies" />
+    <EntitySet Name="Outcomes" EntityType="DBModel.Outcomes" />
+    <EntitySet Name="Products" EntityType="DBModel.Products" />
+    <EntitySet Name="Review" EntityType="DBModel.Review" />
+    <EntitySet Name="Shifts" EntityType="DBModel.Shifts" />
+    <EntitySet Name="Suppliers" EntityType="DBModel.Suppliers" />
+    <EntitySet Name="supplies_type" EntityType="DBModel.supplies_type" />
+    <EntitySet Name="ticket_type" EntityType="DBModel.ticket_type" />
+    <EntitySet Name="Worker_types" EntityType="DBModel.Worker_types" />
+    <EntitySet Name="Workers" EntityType="DBModel.Workers" />
+    <AssociationSet Name="FK_Food_Deals_Costumers" Association="DBModel.FK_Food_Deals_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Costumers" Association="DBModel.FK_Movie_Deal_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Costumers" Association="DBModel.FK_Review_Costumers">
+      <End Role="Costumers" EntitySet="Costumers" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movies_ToDirectors" Association="DBModel.FK_Movies_ToDirectors">
+      <End Role="Directors" EntitySet="Directors" />
+      <End Role="Movies" EntitySet="Movies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Food_Deal_Details_ToTable" Association="DBModel.FK_Food_Deal_Details_ToTable">
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+      <End Role="Food_Deal_Details" EntitySet="Food_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Food_Deals_Workers" Association="DBModel.FK_Food_Deals_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Food_Deals" EntitySet="Food_Deals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Movies" Association="DBModel.FK_Movie_Deal_Movies">
+      <End Role="Movies" EntitySet="Movies" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Movie_Deal_Workers" Association="DBModel.FK_Movie_Deal_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToMovie_Deal" Association="DBModel.FK_Table_ToMovie_Deal">
+      <End Role="Movie_Deal" EntitySet="Movie_Deal" />
+      <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_ToTicket_Type" Association="DBModel.FK_Table_ToTicket_Type">
+      <End Role="ticket_type" EntitySet="ticket_type" />
+      <End Role="Movie_Deal_Details" EntitySet="Movie_Deal_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outcomes_Suppliers" Association="DBModel.FK_Outcomes_Suppliers">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Outcomes" EntitySet="Outcomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Outcomes_Workers" Association="DBModel.FK_Outcomes_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Outcomes" EntitySet="Outcomes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shifts_Workers" Association="DBModel.FK_Shifts_Workers">
+      <End Role="Workers" EntitySet="Workers" />
+      <End Role="Shifts" EntitySet="Shifts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_ToWorker_Types" Association="DBModel.FK_Workers_ToWorker_Types">
+      <End Role="Worker_types" EntitySet="Worker_types" />
+      <End Role="Workers" EntitySet="Workers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Costumers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Food_Deals" Relationship="DBModel.FK_Food_Deals_Costumers" FromRole="Costumers" ToRole="Food_Deals" />
+    <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Costumers" FromRole="Costumers" ToRole="Movie_Deal" />
+    <NavigationProperty Name="Review" Relationship="DBModel.FK_Review_Costumers" FromRole="Costumers" ToRole="Review" />
+  </EntityType>
+  <EntityType Name="Directors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Director_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Movies" Relationship="DBModel.FK_Movies_ToDirectors" FromRole="Directors" ToRole="Movies" />
+  </EntityType>
+  <EntityType Name="Food_Deal_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Food_Deals" Relationship="DBModel.FK_Food_Deal_Details_ToTable" FromRole="Food_Deal_Details" ToRole="Food_Deals" />
+  </EntityType>
+  <EntityType Name="Food_Deals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Worker" Type="Int32" Nullable="false" />
+    <Property Name="Costumer" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Costumers" Relationship="DBModel.FK_Food_Deals_Costumers" FromRole="Food_Deals" ToRole="Costumers" />
+    <NavigationProperty Name="Food_Deal_Details" Relationship="DBModel.FK_Food_Deal_Details_ToTable" FromRole="Food_Deals" ToRole="Food_Deal_Details" />
+    <NavigationProperty Name="Workers" Relationship="DBModel.FK_Food_Deals_Workers" FromRole="Food_Deals" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Movie_Deal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Worker" Type="Int32" Nullable="false" />
+    <Property Name="Costumer" Type="Int32" Nullable="false" />
+    <Property Name="Movie" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Costumers" Relationship="DBModel.FK_Movie_Deal_Costumers" FromRole="Movie_Deal" ToRole="Costumers" />
+    <NavigationProperty Name="Movies" Relationship="DBModel.FK_Movie_Deal_Movies" FromRole="Movie_Deal" ToRole="Movies" />
+    <NavigationProperty Name="Workers" Relationship="DBModel.FK_Movie_Deal_Workers" FromRole="Movie_Deal" ToRole="Workers" />
+    <NavigationProperty Name="Movie_Deal_Details" Relationship="DBModel.FK_Table_ToMovie_Deal" FromRole="Movie_Deal" ToRole="Movie_Deal_Details" />
+  </EntityType>
+  <EntityType Name="Movie_Deal_Details">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DealID" Type="Int32" Nullable="false" />
+    <Property Name="Ticket_Type" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Table_ToMovie_Deal" FromRole="Movie_Deal_Details" ToRole="Movie_Deal" />
+    <NavigationProperty Name="ticket_type1" Relationship="DBModel.FK_Table_ToTicket_Type" FromRole="Movie_Deal_Details" ToRole="ticket_type" />
+  </EntityType>
+  <EntityType Name="Movies">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Director" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Age_Limit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Incomes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Everge_grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Directors" Relationship="DBModel.FK_Movies_ToDirectors" FromRole="Movies" ToRole="Directors" />
+    <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Movies" FromRole="Movies" ToRole="Movie_Deal" />
+  </EntityType>
+  <EntityType Name="Outcomes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Worker" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Supplier" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Suppliers" Relationship="DBModel.FK_Outcomes_Suppliers" FromRole="Outcomes" ToRole="Suppliers" />
+    <NavigationProperty Name="Workers" Relationship="DBModel.FK_Outcomes_Workers" FromRole="Outcomes" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Costumer" Type="Int32" Nullable="false" />
+    <Property Name="Movie_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Star_num" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Costumers" Relationship="DBModel.FK_Review_Costumers" FromRole="Review" ToRole="Costumers" />
+  </EntityType>
+  <EntityType Name="Shifts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Worker" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HoursNum" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Workers" Relationship="DBModel.FK_Shifts_Workers" FromRole="Shifts" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type_supplies" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Outcomes" Relationship="DBModel.FK_Outcomes_Suppliers" FromRole="Suppliers" ToRole="Outcomes" />
+  </EntityType>
+  <EntityType Name="supplies_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="food" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="clean_metrial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="uniforms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ticket_type">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ticket_Kind" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Movie_Deal_Details" Relationship="DBModel.FK_Table_ToTicket_Type" FromRole="ticket_type" ToRole="Movie_Deal_Details" />
+  </EntityType>
+  <EntityType Name="Worker_types">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="JobType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Workers" Relationship="DBModel.FK_Workers_ToWorker_Types" FromRole="Worker_types" ToRole="Workers" />
+  </EntityType>
+  <EntityType Name="Workers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNum" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthDay" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Worker_Type" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Food_Deals" Relationship="DBModel.FK_Food_Deals_Workers" FromRole="Workers" ToRole="Food_Deals" />
+    <NavigationProperty Name="Movie_Deal" Relationship="DBModel.FK_Movie_Deal_Workers" FromRole="Workers" ToRole="Movie_Deal" />
+    <NavigationProperty Name="Outcomes" Relationship="DBModel.FK_Outcomes_Workers" FromRole="Workers" ToRole="Outcomes" />
+    <NavigationProperty Name="Shifts" Relationship="DBModel.FK_Shifts_Workers" FromRole="Workers" ToRole="Shifts" />
+    <NavigationProperty Name="Worker_types" Relationship="DBModel.FK_Workers_ToWorker_Types" FromRole="Workers" ToRole="Worker_types" />
+  </EntityType>
+  <Association Name="FK_Food_Deals_Costumers">
+    <End Type="DBModel.Costumers" Role="Costumers" Multiplicity="1" />
+    <End Type="DBModel.Food_Deals" Role="Food_Deals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deals">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Costumers">
+    <End Type="DBModel.Costumers" Role="Costumers" Multiplicity="1" />
+    <End Type="DBModel.Movie_Deal" Role="Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Costumers">
+    <End Type="DBModel.Costumers" Role="Costumers" Multiplicity="1" />
+    <End Type="DBModel.Review" Role="Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="Costumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movies_ToDirectors">
+    <End Type="DBModel.Directors" Role="Directors" Multiplicity="1" />
+    <End Type="DBModel.Movies" Role="Movies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Directors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movies">
+        <PropertyRef Name="Director" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Food_Deal_Details_ToTable">
+    <End Type="DBModel.Food_Deals" Role="Food_Deals" Multiplicity="1" />
+    <End Type="DBModel.Food_Deal_Details" Role="Food_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Food_Deals">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deal_Details">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Food_Deals_Workers">
+    <End Type="DBModel.Workers" Role="Workers" Multiplicity="1" />
+    <End Type="DBModel.Food_Deals" Role="Food_Deals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Food_Deals">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Movies">
+    <End Type="DBModel.Movies" Role="Movies" Multiplicity="1" />
+    <End Type="DBModel.Movie_Deal" Role="Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movies">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Movie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Movie_Deal_Workers">
+    <End Type="DBModel.Workers" Role="Workers" Multiplicity="1" />
+    <End Type="DBModel.Movie_Deal" Role="Movie_Deal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToMovie_Deal">
+    <End Type="DBModel.Movie_Deal" Role="Movie_Deal" Multiplicity="1" />
+    <End Type="DBModel.Movie_Deal_Details" Role="Movie_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie_Deal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal_Details">
+        <PropertyRef Name="DealID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_ToTicket_Type">
+    <End Type="DBModel.ticket_type" Role="ticket_type" Multiplicity="1" />
+    <End Type="DBModel.Movie_Deal_Details" Role="Movie_Deal_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ticket_type">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Movie_Deal_Details">
+        <PropertyRef Name="Ticket_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outcomes_Suppliers">
+    <End Type="DBModel.Suppliers" Role="Suppliers" Multiplicity="1" />
+    <End Type="DBModel.Outcomes" Role="Outcomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outcomes">
+        <PropertyRef Name="Supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Outcomes_Workers">
+    <End Type="DBModel.Workers" Role="Workers" Multiplicity="1" />
+    <End Type="DBModel.Outcomes" Role="Outcomes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Outcomes">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shifts_Workers">
+    <End Type="DBModel.Workers" Role="Workers" Multiplicity="1" />
+    <End Type="DBModel.Shifts" Role="Shifts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Workers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Shifts">
+        <PropertyRef Name="Worker" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_ToWorker_Types">
+    <End Type="DBModel.Worker_types" Role="Worker_types" Multiplicity="1" />
+    <End Type="DBModel.Workers" Role="Workers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker_types">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Workers">
+        <PropertyRef Name="Worker_Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

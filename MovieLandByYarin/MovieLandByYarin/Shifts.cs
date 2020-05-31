@@ -17,8 +17,7 @@ namespace MovieLandByYarin
         public int Id { get; set; }
         public int Worker { get; set; }
         public string Date { get; set; }
-        public string Start_time { get; set; }
-        public string End_time { get; set; }
+        public int HoursNum { get; set; }
     
         public virtual Workers Workers { get; set; }
     }

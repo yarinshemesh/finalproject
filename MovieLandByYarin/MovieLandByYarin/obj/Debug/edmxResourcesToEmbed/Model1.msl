@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="Costumers">
+      <EntityTypeMapping TypeName="DBModel.Costumers">
+        <MappingFragment StoreEntitySet="Costumers">
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Directors">
+      <EntityTypeMapping TypeName="DBModel.Directors">
+        <MappingFragment StoreEntitySet="Directors">
+          <ScalarProperty Name="Director_Name" ColumnName="Director_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food_Deal_Details">
+      <EntityTypeMapping TypeName="DBModel.Food_Deal_Details">
+        <MappingFragment StoreEntitySet="Food_Deal_Details">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Food_Deals">
+      <EntityTypeMapping TypeName="DBModel.Food_Deals">
+        <MappingFragment StoreEntitySet="Food_Deals">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Costumer" ColumnName="Costumer" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movie_Deal">
+      <EntityTypeMapping TypeName="DBModel.Movie_Deal">
+        <MappingFragment StoreEntitySet="Movie_Deal">
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Movie" ColumnName="Movie" />
+          <ScalarProperty Name="Costumer" ColumnName="Costumer" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movie_Deal_Details">
+      <EntityTypeMapping TypeName="DBModel.Movie_Deal_Details">
+        <MappingFragment StoreEntitySet="Movie_Deal_Details">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Ticket_Type" ColumnName="Ticket_Type" />
+          <ScalarProperty Name="DealID" ColumnName="DealID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="DBModel.Movies">
+        <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="Everge_grade" ColumnName="Everge_grade" />
+          <ScalarProperty Name="Incomes" ColumnName="Incomes" />
+          <ScalarProperty Name="Age_Limit" ColumnName="Age_Limit" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Outcomes">
+      <EntityTypeMapping TypeName="DBModel.Outcomes">
+        <MappingFragment StoreEntitySet="Outcomes">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Supplier" ColumnName="Supplier" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="DBModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Review">
+      <EntityTypeMapping TypeName="DBModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="Star_num" ColumnName="Star_num" />
+          <ScalarProperty Name="Movie_name" ColumnName="Movie_name" />
+          <ScalarProperty Name="Costumer" ColumnName="Costumer" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shifts">
+      <EntityTypeMapping TypeName="DBModel.Shifts">
+        <MappingFragment StoreEntitySet="Shifts">
+          <ScalarProperty Name="HoursNum" ColumnName="HoursNum" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Worker" ColumnName="Worker" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="DBModel.Suppliers">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Type_supplies" ColumnName="Type_supplies" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplies_type">
+      <EntityTypeMapping TypeName="DBModel.supplies_type">
+        <MappingFragment StoreEntitySet="supplies_type">
+          <ScalarProperty Name="uniforms" ColumnName="uniforms" />
+          <ScalarProperty Name="clean_metrial" ColumnName="clean_metrial" />
+          <ScalarProperty Name="food" ColumnName="food" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ticket_type">
+      <EntityTypeMapping TypeName="DBModel.ticket_type">
+        <MappingFragment StoreEntitySet="ticket_type">
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Ticket_Kind" ColumnName="Ticket_Kind" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Worker_types">
+      <EntityTypeMapping TypeName="DBModel.Worker_types">
+        <MappingFragment StoreEntitySet="Worker_types">
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="DBModel.Workers">
+        <MappingFragment StoreEntitySet="Workers">
+          <ScalarProperty Name="Worker_Type" ColumnName="Worker_Type" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="BirthDay" ColumnName="BirthDay" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

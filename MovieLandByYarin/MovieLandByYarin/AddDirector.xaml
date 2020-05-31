@@ -1,0 +1,36 @@
+﻿<Window x:Class="MovieLandByYarin.AddDirector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieLandByYarin"
+        mc:Ignorable="d"
+       Title="contactAdder"  Height="400" Width="400" Background="DarkSeaGreen" Loaded="Window_Loaded" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Text="NAME:" VerticalAlignment="Top" Margin="21,56,18.333,0" Grid.ColumnSpan="2" Height="18" FontFamily="Century Schoolbook"/>
+        <TextBox Text="{Binding Director_Name}" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="19,5,0,0" Grid.Row="1" PreviewTextInput="TextValidationTextBox"/>
+
+        <Button   Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.ColumnSpan="2" Grid.Column="3" Margin="54,0,0,0" Grid.Row="4" Height="41"  FontFamily="Century Schoolbook" Click="add_click"/>
+
+
+
+
+
+
+    </Grid>
+</Window>

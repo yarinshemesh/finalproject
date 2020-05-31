@@ -13,10 +13,10 @@ namespace MovieLandByYarin
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBEntities : DbContext
+    public partial class Database1Entities : DbContext
     {
-        public DBEntities()
-            : base("name=DBEntities")
+        public Database1Entities()
+            : base("name=Database1Entities")
         {
         }
     
@@ -26,13 +26,20 @@ namespace MovieLandByYarin
         }
     
         public virtual DbSet<Costumers> Costumers { get; set; }
+        public virtual DbSet<Directors> Directors { get; set; }
+        public virtual DbSet<Food_Deal_Details> Food_Deal_Details { get; set; }
         public virtual DbSet<Food_Deals> Food_Deals { get; set; }
         public virtual DbSet<Movie_Deal> Movie_Deal { get; set; }
+        public virtual DbSet<Movie_Deal_Details> Movie_Deal_Details { get; set; }
         public virtual DbSet<Movies> Movies { get; set; }
         public virtual DbSet<Outcomes> Outcomes { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Review> Review { get; set; }
         public virtual DbSet<Shifts> Shifts { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
+        public virtual DbSet<supplies_type> supplies_type { get; set; }
+        public virtual DbSet<ticket_type> ticket_type { get; set; }
+        public virtual DbSet<Worker_types> Worker_types { get; set; }
         public virtual DbSet<Workers> Workers { get; set; }
     }
 }

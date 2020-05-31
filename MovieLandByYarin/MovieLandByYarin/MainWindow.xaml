@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieLandByYarin"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="MainWindow" Height="450" Width="600">
+    <!--<Window.Background>
+        <ImageBrush ImageSource="images//yarinb.jpg"></ImageBrush>
+    </Window.Background>-->
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock  HorizontalAlignment="Left" TextWrapping="Wrap" Text="MOVIELAND" FontFamily="Charlemagne Std" FontSize="55"  Foreground="White" VerticalAlignment="Top" Margin="21,0,0,0" Grid.ColumnSpan="3" Height="74" Width="325" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="employees" Content="employees" FontSize="17"   Background="AntiqueWhite" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2" Grid.Column="3" Margin="68,0,0,0" Grid.Row="3" Height="32" Click="employees_Click"/>
+        <Button x:Name="tickets" Content="buying tickets" FontSize="17" Background="AntiqueWhite" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" RenderTransformOrigin="1.115,3.076" Grid.Column="1" Margin="106,0,0,0" Grid.Row="3" Height="32" Grid.ColumnSpan="3" Click="tickets_Click"/>
+        <Button x:Name="food" Content="food deals" FontSize="17" Background="AntiqueWhite" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" Margin="48,0,0,0" Grid.Row="3" Height="32" Click="food_Click"/>
+        <Button Content="supplires"  Background="AntiqueWhite" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2" Grid.Column="3" Margin="68,63,0,0" Grid.Row="3" Height="32" Click="Supplies_Click" Grid.RowSpan="2"/>
+        <Button Content="reviews" Background="AntiqueWhite" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" Margin="48,62,0,0" Grid.Row="3" Height="32" Click="Review_Click" Grid.RowSpan="2"/>
+        <Button Content="costuemrs" Background="AntiqueWhite" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Grid.Column="1" Margin="106,42,0,0" Grid.Row="4" Grid.ColumnSpan="3" Height="32" Click="Costumers_Click"/>
+        <Button Content="movies"  Background="AntiqueWhite" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="139" Grid.Column="1" Margin="106,62,0,0" Grid.Row="3" Grid.RowSpan="2" Height="32" Grid.ColumnSpan="3" Click="Movies_Click"/>
+        <Button Content="Directors" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2" Grid.Column="3" Margin="68,42,0,0" Grid.Row="4" Height="32" Click="director_window"/>
+        <Button Content="Worker type" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" Margin="48,42,0,0" Grid.Row="4" Height="32" Click="WorkerType_window"/>
+        <Button Content="Products" FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="111" Grid.ColumnSpan="2" Margin="48,30,0,0" Grid.Row="2" Height="28" Click="product_window"/>
+        <Button Content="ticket type edit"  FontSize="17" FontFamily="Charlemagne Std" HorizontalAlignment="Left" VerticalAlignment="Top" Width="117" Grid.ColumnSpan="2" Grid.Column="3" Margin="68,30.333,0,0" Grid.Row="2" Height="35" Click="tickets_type_Click"/>
+
+
     </Grid>
 </Window>

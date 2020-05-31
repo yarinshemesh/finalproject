@@ -58,6 +58,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -78,10 +79,61 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCostumer.xaml.cs">
+      <DependentUpon>AddCostumer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddDirector.xaml.cs">
+      <DependentUpon>AddDirector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddFoodDealDetails.xaml.cs">
+      <DependentUpon>AddFoodDealDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddMovieDeal.xaml.cs">
+      <DependentUpon>AddMovieDeal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrderFood.xaml.cs">
+      <DependentUpon>AddOrderFood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.xaml.cs">
+      <DependentUpon>AddProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddSuplier.xaml.cs">
+      <DependentUpon>AddSuplier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddWorkerType.xaml.cs">
+      <DependentUpon>AddWorkerType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_movie.xaml.cs">
+      <DependentUpon>Add_movie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_movieDetails.xaml.cs">
+      <DependentUpon>Add_movieDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_TicketType.xaml.cs">
+      <DependentUpon>Add_TicketType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_worker.xaml.cs">
+      <DependentUpon>Add_worker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Costumers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomersHandle.xaml.cs">
+      <DependentUpon>CustomersHandle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Directors.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Directors_list.xaml.cs">
+      <DependentUpon>Directors_list.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FoodDeals.xaml.cs">
+      <DependentUpon>FoodDeals.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Food_Deals.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Food_Deal_Details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.cs">
@@ -89,27 +141,129 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MovieDeals.xaml.cs">
+      <DependentUpon>MovieDeals.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Movies.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="MoviesHandle.xaml.cs">
+      <DependentUpon>MoviesHandle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Movie_Deal.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Movie_Deal_Details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Outcomes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Products.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="products_list.xaml.cs">
+      <DependentUpon>products_list.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Review.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReviewMovie.xaml.cs">
+      <DependentUpon>ReviewMovie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="reviews_list.xaml.cs">
+      <DependentUpon>reviews_list.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shifts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Supliers.xaml.cs">
+      <DependentUpon>Supliers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Suppliers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="supplies_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketType.xaml.cs">
+      <DependentUpon>TicketType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ticket_type.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkerHandle.xaml.cs">
+      <DependentUpon>WorkerHandle.xaml</DependentUpon>
     </Compile>
     <Compile Include="Workers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Workers_type.xaml.cs">
+      <DependentUpon>Workers_type.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Worker_types.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Page Include="AddCostumer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddDirector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddFoodDealDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddMovieDeal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddOrderFood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddSuplier.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWorkerType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_movie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_movieDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_TicketType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_worker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomersHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Directors_list.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FoodDeals.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -122,6 +276,42 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MovieDeals.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MoviesHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="products_list.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ReviewMovie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="reviews_list.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Supliers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TicketType.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkerHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Workers_type.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model1.Context.cs">
@@ -180,13 +370,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="DB.mdf" />
     <Content Include="DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
+    <Resource Include="images\yarinb.jpg" />
+    <Resource Include="images\b1.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

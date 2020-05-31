@@ -22,7 +22,6 @@ namespace MovieLandByYarin
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Generl_incomes { get; set; }
         public string Type_supplies { get; set; }
         public string Notes { get; set; }
     
